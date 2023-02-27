@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+    paths:
+      - input/**
 
 jobs:
   build:
@@ -16,7 +18,7 @@ jobs:
         token: ${{secrets.PUSH_TOKEN}}
     - run: |
         echo "Pushing generated result..."
-        cd outputs
+        cd output
         date > generated.txt
         git config user.name github-actions
         git config user.email github@users.noreply.github.com
