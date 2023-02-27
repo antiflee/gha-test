@@ -1,4 +1,4 @@
-namd: Test Push Action
+name: Test Push Action
 on: push
 jobs:
   build:
