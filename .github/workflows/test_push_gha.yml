@@ -1,0 +1,16 @@
+namd: Test Push Action
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - runs: |
+        echo "Pushing generated result..."
+        cd outputs
+        date > generated.txt
+        git config user.name github-actions
+        git config user.email github@users.noreply.github.com
+        git add .
+        git commit -m "Genereate text file"
+        git push
