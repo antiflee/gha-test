@@ -14,8 +14,6 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
-      with:
-        token: ${{secrets.PUSH_TOKEN}}
 
     - name: Set up Python
       run: |
@@ -33,6 +31,8 @@ jobs:
       run: python3 scripts/config_generator.py
 
     - name: Commit and push config.yaml
+      with:
+        token: ${{secrets.PUSH_TOKEN}}
       run: |
         git config user.name github-actions
         git config user.email github@users.noreply.github.com
