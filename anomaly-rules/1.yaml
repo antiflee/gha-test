@@ -1,5 +1,5 @@
 rules:
-- group_name: "group a"
+- group_name: "group a "
   rule_name: "rule a"
   rule_expr: "metric > 1"
   rule_summary: "Metric is greater than 1"
