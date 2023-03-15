@@ -24,7 +24,7 @@ for rule_file in anomaly_rules_path.glob('*.yaml'):
                 expr = rule['expr']
 
                 # Add the extracted values to the output data structure
-                output_data['rules'].append({'alert': alert, 'expr': expr})
+                output_config['rules'].append({'alert': alert, 'expr': expr})
 
 # Write the output config to "configs/config.yaml"
 with open(configs_path / 'config.yaml', 'w') as output_file:
